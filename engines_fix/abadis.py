@@ -46,6 +46,8 @@ def response(resp):
     # Parse HTML
     dom = html.fromstring(resp.text)
     mainContent = eval_xpath(dom, "//main")
+    if not mainContent:
+        return results
 
     for content in mainContent:
 
@@ -63,15 +65,16 @@ def response(resp):
             IPA = eval_xpath(content, '//div[@id="boxWrd"]/div')
             CONTENT = eval_xpath(content, 'div[contains(@t, "لغت نامه دهخدا")]/div[2]')
 
-    # Generate Result
-    results.append(
-        {
-            "template": "dictionaries.html",
-            "url": resp.url,
-            "title": extract_text(WORD),
-            "ipa": extract_text(IPA),
-            "content": extract_text(CONTENT)[:150] + "...",
-        }
-    )
+    # Generate Result (template: dictionaries.html is parch-fork-only,
+    # upstream SearXNG does not have it -> use default.html)
+    result = {
+        "url": resp.url,
+        "title": extract_text(WORD),
+        "content": extract_text(CONTENT)[:150] + "...",
+    }
+    ipa_text = extract_text(IPA)
+    if ipa_text:
+        result["ipa"] = ipa_text
+    results.append(result)
 
     return results
