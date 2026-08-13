@@ -18,6 +18,8 @@ COPY engines_fix/qwant.py /usr/local/searxng/searx/engines/qwant.py
 COPY engines_fix/solidtorrents.py /usr/local/searxng/searx/engines/solidtorrents.py
 COPY engines_fix/unsplash.py /usr/local/searxng/searx/engines/unsplash.py
 COPY engines_fix/batch1/360search.py /usr/local/searxng/searx/engines/360search.py
+# parchlinuxb fork version: adds images/videos category support (ChinasoCategoryType)
+COPY engines_fix/batch1/chinaso.py /usr/local/searxng/searx/engines/chinaso.py
 COPY engines_fix/batch2/metacpan.py /usr/local/searxng/searx/engines/metacpan.py
 COPY engines_fix/batch3/quark.py /usr/local/searxng/searx/engines/quark.py
 COPY engines_fix/batch3/bitchute.py /usr/local/searxng/searx/engines/bitchute.py
@@ -31,6 +33,11 @@ COPY engines_fix/seznam.py /usr/local/searxng/searx/engines/seznam.py
 COPY engines_fix/gmx.py /usr/local/searxng/searx/engines/gmx.py
 # Mullvad Leta engine (from porespellar/return42 mod-sidecar line)
 COPY engines_fix/mullvad_leta.py /usr/local/searxng/searx/engines/mullvad_leta.py
+# 4get proxy search engine (from Aadniz fork, base_url+scraper set via settings.yml)
+COPY engines_fix/4get.py /usr/local/searxng/searx/engines/4get.py
+# Aparat (Iranian YouTube) + Abadis (Persian dictionary) from parchlinuxb fork
+COPY engines_fix/aparat.py /usr/local/searxng/searx/engines/aparat.py
+COPY engines_fix/abadis.py /usr/local/searxng/searx/engines/abadis.py
 # fix: snapshot iteration in ResultContainer.close() to avoid RuntimeError
 # with late-arriving engine results (dictionary changed size during iteration)
 COPY engines_fix/results.py /usr/local/searxng/searx/results.py

@@ -315,6 +315,15 @@ categories_as_tabs:
   social media:
 
 engines:
+  - name: 4get
+    engine: 4get
+    shortcut: 4get
+    base_url: https://4.nboeck.de
+    scraper: yandex
+    categories: [general, web]
+    timeout: 10.0
+    disabled: false
+
   - name: 360search
     engine: 360search
     shortcut: 360so
@@ -381,6 +390,12 @@ engines:
     disabled: false
     shortcut: alp
 
+  - name: abadis
+    engine: abadis
+    shortcut: abadis
+    categories: [dictionaries]
+    disabled: false
+
   - name: annas archive
     engine: annas_archive
     # only the live mirror (verified 2026-08-03) - dead mirrors crashed the engine
@@ -402,6 +417,12 @@ engines:
   #   aa_content: 'magazine' # book_fiction, book_unknown, book_nonfiction, book_comic
   #   aa_ext: 'pdf'  # pdf, epub, ..
   #   aa_sort: oldest'  # newest, oldest, largest, smallest
+
+  - name: aparat
+    engine: aparat
+    shortcut: aparat
+    categories: [videos]
+    disabled: false
 
   - name: apk mirror
     # FlareSolverr-based engine - direct connection (no Tor proxy)
