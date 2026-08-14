@@ -36,7 +36,7 @@ def request(query, params):
     if not localLang:
         return None
 
-    params["url"] = BASE_URL + localLang + query
+    params["url"] = BASE_URL + localLang + query + "/"
     return params
 
 

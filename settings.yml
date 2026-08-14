@@ -394,6 +394,7 @@ engines:
     engine: abadis
     shortcut: abadis
     categories: [dictionaries]
+    timeout: 20.0
     disabled: false
 
   - name: annas archive
