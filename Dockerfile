@@ -43,6 +43,11 @@ COPY engines_fix/searchcode_code.py /usr/local/searxng/searx/engines/searchcode_
 COPY engines_fix/stract.py /usr/local/searxng/searx/engines/stract.py
 # webapp.py: autocompleter GET+POST, escape(suggestions), opensearch POST default (Bnyro fork)
 COPY engines_fix/webapp.py /usr/local/searxng/searx/webapp.py
+# wolframalpha_noapi: Referer KeyError fix (.get() with fallback)
+COPY engines_fix/wolframalpha_noapi.py /usr/local/searxng/searx/engines/wolframalpha_noapi.py
+# httpx_socks 0.10.0 x python_socks 3.0.0 incompatibility fix:
+# remove proxy_ssl from Proxy.create() calls (python_socks 3 dropped it)
+COPY engines_fix/_async_proxy.py /usr/local/searxng/.venv/lib/python3.14/site-packages/httpx_socks/_async_proxy.py
 # fix: snapshot iteration in ResultContainer.close() to avoid RuntimeError
 # with late-arriving engine results (dictionary changed size during iteration)
 COPY engines_fix/results.py /usr/local/searxng/searx/results.py
