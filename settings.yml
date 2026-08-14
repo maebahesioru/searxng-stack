@@ -1946,6 +1946,12 @@ engines:
     engine: soundcloud
     shortcut: sc
 
+  - name: searchcode code
+    engine: searchcode_code
+    shortcut: scc
+    categories: [it]
+    disabled: false
+
   - name: stackoverflow
     engine: stackexchange
     shortcut: st
@@ -2022,6 +2028,12 @@ engines:
     timeout: 5
     # read https://docs.searxng.org/dev/engines/online/springer.html
     api_key: ""
+
+  - name: stract
+    engine: stract
+    shortcut: stract
+    categories: [general, web]
+    disabled: false
 
   - name: startpage
     engine: startpage

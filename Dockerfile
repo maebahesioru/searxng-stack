@@ -38,6 +38,11 @@ COPY engines_fix/4get.py /usr/local/searxng/searx/engines/4get.py
 # Aparat (Iranian YouTube) + Abadis (Persian dictionary) from parchlinuxb fork
 COPY engines_fix/aparat.py /usr/local/searxng/searx/engines/aparat.py
 COPY engines_fix/abadis.py /usr/local/searxng/searx/engines/abadis.py
+# searchcode_code + stract engines (return42 mod-sidecar line, modern EngineResults API)
+COPY engines_fix/searchcode_code.py /usr/local/searxng/searx/engines/searchcode_code.py
+COPY engines_fix/stract.py /usr/local/searxng/searx/engines/stract.py
+# webapp.py: autocompleter GET+POST, escape(suggestions), opensearch POST default (Bnyro fork)
+COPY engines_fix/webapp.py /usr/local/searxng/searx/webapp.py
 # fix: snapshot iteration in ResultContainer.close() to avoid RuntimeError
 # with late-arriving engine results (dictionary changed size during iteration)
 COPY engines_fix/results.py /usr/local/searxng/searx/results.py
