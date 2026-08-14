@@ -58,11 +58,6 @@ COPY engines_fix/sogou.py /usr/local/searxng/searx/engines/sogou.py
 COPY engines_fix/google_news.py /usr/local/searxng/searx/engines/google_news.py
 # PR #6123 icons8 icon search engine (Bnyro)
 COPY engines_fix/icons8.py /usr/local/searxng/searx/engines/icons8.py
-# return42 experimental branches (2026-08-14):
-# img_src-deviantart: hi-res image URL calc + thumbnail_src
-COPY engines_fix/deviantart.py /usr/local/searxng/searx/engines/deviantart.py
-# fix-bing: send_accept_language_header + SRCHHPGUSR cookie + paging fix
-COPY engines_fix/bing.py /usr/local/searxng/searx/engines/bing.py
 # httpx_socks 0.10.0 x python_socks 3.0.0 incompatibility fix:
 # remove proxy_ssl from Proxy.create() calls (python_socks 3 dropped it)
 COPY engines_fix/_async_proxy.py /usr/local/searxng/.venv/lib/python3.14/site-packages/httpx_socks/_async_proxy.py
