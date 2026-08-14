@@ -25,9 +25,9 @@ def request(query, params):
     # Detect language
     localLang = params["searxng_locale"]
     match localLang.split("-"):
-        case [*_, "fa"] | [*_, "ar"]:
+        case ["fa", *_] | ["ar", *_]:
             localLang = "fatofa/"
-        case [*_, "en"]:
+        case ["en", *_]:
             localLang = "entofa/"
         case _:
             localLang = False
