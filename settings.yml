@@ -2405,6 +2405,12 @@ engines:
   #    query_str: 'SELECT * from mytable WHERE fieldname=%(query)s'
   #    shortcut: mdb
 
+  - name: icons8
+    engine: icons8
+    shortcut: i8
+    categories: [images, icons]
+    disabled: false
+
   - name: 1337x
     engine: 1337x
     shortcut: 1337x

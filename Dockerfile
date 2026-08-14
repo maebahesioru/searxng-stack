@@ -49,6 +49,15 @@ COPY engines_fix/stract.py /usr/local/searxng/searx/engines/stract.py
 COPY engines_fix/webapp.py /usr/local/searxng/searx/webapp.py
 # wolframalpha_noapi: Referer KeyError fix (.get() with fallback)
 COPY engines_fix/wolframalpha_noapi.py /usr/local/searxng/searx/engines/wolframalpha_noapi.py
+# Upstream open PRs cherry-picked (2026-08-14):
+# PR #2652 startpage GET-request (CAPTCHA frequency reduction)
+COPY engines_fix/startpage.py /usr/local/searxng/searx/engines/startpage.py
+# PR #4827 sogou antispider graceful + URL resolution via multi_requests
+COPY engines_fix/sogou.py /usr/local/searxng/searx/engines/sogou.py
+# PR #6284 google_news DOM changes (title in a[target=_blank], metadata)
+COPY engines_fix/google_news.py /usr/local/searxng/searx/engines/google_news.py
+# PR #6123 icons8 icon search engine (Bnyro)
+COPY engines_fix/icons8.py /usr/local/searxng/searx/engines/icons8.py
 # httpx_socks 0.10.0 x python_socks 3.0.0 incompatibility fix:
 # remove proxy_ssl from Proxy.create() calls (python_socks 3 dropped it)
 COPY engines_fix/_async_proxy.py /usr/local/searxng/.venv/lib/python3.14/site-packages/httpx_socks/_async_proxy.py
