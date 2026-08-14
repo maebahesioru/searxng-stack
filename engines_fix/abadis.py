@@ -67,11 +67,16 @@ def response(resp):
 
     # Generate Result (template: dictionaries.html is parch-fork-only,
     # upstream SearXNG does not have it -> use default.html)
+    title_text = extract_text(WORD)
+    content_text = extract_text(CONTENT)
+    if not title_text and not content_text:
+        return results
     result = {
         "url": resp.url,
-        "title": extract_text(WORD),
-        "content": extract_text(CONTENT)[:150] + "...",
+        "title": title_text or content_text[:40],
     }
+    if content_text:
+        result["content"] = content_text[:150] + "..."
     ipa_text = extract_text(IPA)
     if ipa_text:
         result["ipa"] = ipa_text
