@@ -56,5 +56,6 @@ COPY favicons.toml /etc/searxng/favicons.toml
 COPY settings.yml /etc/searxng/settings.yml
 # purge stale bytecode caches (base image ships pre-compiled .pyc that shadows patched sources)
 RUN find /usr/local/searxng/searx -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
+RUN find /usr/local/searxng/.venv/lib/python3.14/site-packages/httpx_socks -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
 
 USER searxng
