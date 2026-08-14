@@ -1,6 +1,10 @@
 FROM searxng/searxng:latest
 
 USER root
+# Downgrade python_socks 3.0.0 -> 2.2.0 (httpx_socks 0.10.0 is incompatible with 3.x:
+# AnyioProxy got proxy_ssl / connect_tcp got dest_ssl TypeErrors)
+RUN rm -rf /usr/local/searxng/.venv/lib/python3.14/site-packages/python_socks \
+           /usr/local/searxng/.venv/lib/python3.14/site-packages/python_socks-*.dist-info
 COPY wheels/ /tmp/wheels/
 RUN python3 - <<'EOF'
 import zipfile, glob
