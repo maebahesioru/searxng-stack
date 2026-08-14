@@ -72,7 +72,7 @@ def response(resp):
     if not title_text and not content_text:
         return results
     result = {
-        "url": resp.url,
+        "url": str(resp.url),
         "title": title_text or content_text[:40],
     }
     if content_text:
